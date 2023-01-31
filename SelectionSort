@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Program 
+{
+  public static int[] selectionSort(int[] array) 
+	{
+    	// Write your code here.
+		  
+			for(int i=0;i<array.length;i++)
+			{
+				  int current=i;
+					for(int j=i+1;j<array.length;j++)
+					{
+						  if(array[current]>array[j])
+							{
+									current=j;
+							} 
+					}
+					int temp=array[i];
+				  array[i]=array[current];
+					array[current]=temp;
+					
+					
+			}
+    	return array;
+  }
+}
