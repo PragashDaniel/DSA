@@ -1,0 +1,18 @@
+class Solution {
+    void pushZerosToEnd(int[] arr, int n) 
+    {
+        // code here
+        int i=0;
+        for(int k=0;k<n;k++)
+        {
+            if(arr[k]!=0)
+            {
+                int temp=arr[k];
+                arr[k]=arr[i];
+                arr[i]=temp;
+                i++;
+            }
+            
+        }
+    }
+}
