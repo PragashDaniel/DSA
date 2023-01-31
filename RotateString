@@ -1,0 +1,30 @@
+class Solution 
+{
+    public boolean rotateString(String str, String goal) 
+    {
+        if(str.length()==goal.length())
+        {
+		    for(int i=0;i<str.length();i++)
+		    {
+		
+				str=rotateS(str);
+				System.out.println(str);
+				if(str.equals(goal))
+					return true;
+		    }
+        }
+		return false;
+    }
+
+    static String rotateS(String str) 
+	{
+		// TODO Auto-generated method stub
+		String s="";
+		for(int i=1;i<str.length();i++)
+		{
+			s=s+str.charAt(i);
+		}
+		s+=str.charAt(0);
+		return s;
+	}
+}
