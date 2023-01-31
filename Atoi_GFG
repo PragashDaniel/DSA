@@ -1,0 +1,36 @@
+
+
+//User function template for JAVA
+
+/*You are required to complete this method */
+class Solution
+{
+    int atoi(String str) 
+    {
+	// Your code her
+	    int ans=helper(str,0,str.length(),0);
+        if(ans==-1)
+	     return ans;
+	    else if(str.charAt(0)=='-')     
+	     return ans*-1;
+    	else
+	     return ans;
+    }
+    
+    static int helper(String str,int i,int n,int c){
+        if(i==n)
+             return c;
+	    char ch=str.charAt(i);
+         if(ch==45 && i==0)
+         {
+	        i=1;
+	        ch=str.charAt(i);
+	    }
+        if((ch<48 || ch>58) || (i>0 && ch==45))
+        {
+            return -1;
+        }
+	    int num=(int)ch-48;
+        c=c*10+num;
+        return helper(str,++i,n,c);}
+}
