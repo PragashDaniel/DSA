@@ -1,0 +1,26 @@
+class Program 
+{
+  int[] count=new int[26];
+  void getCount(String string)
+  {
+      for(int i=0;i<string.length();i++)
+      {
+          count[string.charAt(i)-97]+=1;
+      }
+  }
+  public int firstNonRepeatingCharacter(String string) 
+  {
+    // Write your code here.
+      getCount(string);     
+      for(int i=0;i<string.length();i++)
+      {
+          if(count[string.charAt(i)-97]==1)
+          {
+              return i;
+          }
+      }
+      return -1;
+  }
+    
+  
+}
