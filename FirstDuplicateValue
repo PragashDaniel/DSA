@@ -1,0 +1,62 @@
+import java.util.*;
+
+class Program {
+
+  public int firstDuplicateValue(int[] array) 
+	{
+			int length=0;
+		  int minlength=Integer.MAX_VALUE;
+			for(int i=0;i<array.length-1;i++)
+			{
+				 for(int j=i+1;j<array.length;j++)
+				 {
+					 	if(array[i]==array[j])
+						{
+							  length=j;
+								if(length<minlength)
+								{
+										minlength=length;
+								}
+						}
+				 }
+			}	
+    	return (minlength==Integer.MAX_VALUE)?-1:array[minlength];
+  }
+}
+import java.util.*;
+
+class Program {
+
+  public int firstDuplicateValue(int[] array) 
+	{
+     // Write your code here.
+		 HashSet<Integer> map=new HashSet<>();
+		 int length=0,minlength=Integer.MAX_VALUE;
+		 for(int i=0;i<array.length;i++)
+		 {
+			 	if(map.contains(array[i]))
+				{
+						return array[i];
+				}
+				map.add(array[i]);
+		 }
+     return -1;
+  }
+}
+import java.util.*;
+
+class Program {
+
+  public int firstDuplicateValue(int[] array) 
+	{
+    // Write your code here.
+  	        for(int i:array)
+			{
+					int abs=Math.abs(i);
+					if(array[abs-1]<0)
+							return abs;
+				  array[abs-1]*=-1;
+			}
+			return -1;
+  }
+}
