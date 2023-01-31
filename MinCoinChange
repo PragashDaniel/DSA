@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Program {
+  public static int minNumberOfCoinsForChange(int n, int[] denoms) 
+  {
+    // Write your code here.
+      int[] numberOfCoins=new int[n+1];
+      Arrays.fill(numberOfCoins,Integer.MAX_VALUE);
+      numberOfCoins[0]=0;
+
+      for(int i=0;i<denoms.length;i++)
+      {
+          for(int j=denoms[i];j<numberOfCoins.length;j++)
+          {
+              if(numberOfCoins[j-denoms[i]]!=Integer.MAX_VALUE)
+              {
+                  numberOfCoins[j]=Math.min(numberOfCoins[j],numberOfCoins[j-denoms[i]]+1);
+              }
+          }
+      }
+      return numberOfCoins[n]==Integer.MAX_VALUE?-1:numberOfCoins[n];
+  }
+}
