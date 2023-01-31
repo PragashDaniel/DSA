@@ -1,0 +1,34 @@
+import java.util.*;
+
+class Program {
+  public static List<Integer[]> threeNumberSum(int[] array, int targetSum) 
+	{
+    // Write your code here.
+		Arrays.sort(array);
+		ArrayList<Integer[]> arr=new ArrayList<>();
+		for(int i=0;i<array.length;i++)
+		{
+				for(int left=i+1,right=array.length-1;left<right;)
+				{
+						int sum=array[i]+array[left]+array[right];
+					  //System.out.println(sum);
+					  if(sum==targetSum)
+						{
+							  Integer ar[]={array[i],array[left],array[right]};
+								arr.add(ar);
+								right--;
+							  left++;
+						}
+						else if(sum>targetSum)
+						{
+								right--;
+						}
+					  else if(sum<targetSum)
+						{
+								left++;
+						}
+				}
+		}
+    return arr;
+  }
+}
