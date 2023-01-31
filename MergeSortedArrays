@@ -1,0 +1,28 @@
+public class Solution 
+{
+    public static int[] ninjaAndSortedArrays(int arr1[], int arr2[], int m, int n) 
+    {
+        // Write your code here.
+        int k;
+        for(int i=0;i<m;i++)
+        {
+            if(arr1[i]>arr2[0])
+            {
+                int temp=arr1[i];
+                arr1[i]=arr2[0];
+                arr2[0]=temp;
+            }
+             int val = arr2[0];
+             for (k = 1; k < n && arr2[k] < val;k++) 
+             {
+                arr2[k - 1] = arr2[k];
+             }
+             arr2[k - 1] = val;
+        }
+        for(int i=m,j=0;j<n;i++,j++)
+        {
+            arr1[i]=arr2[j];
+        }
+        return arr1;
+    }
+}
