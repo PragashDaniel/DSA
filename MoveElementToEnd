@@ -1,0 +1,29 @@
+import java.util.*;
+
+class Program 
+{
+    public static List<Integer> moveElementToEnd(List<Integer> array, int toMove) 
+	{
+    // Write your code here.
+		   for(int i=0,j=array.size()-1;i<j;)
+		   {
+				if(array.get(i)==toMove)
+				{
+					if(array.get(j)==toMove)
+							j--;
+					else
+					{
+						int temp=array.get(i);
+					    array.set(i,array.get(j));
+						array.set(j,temp);
+						i++;
+						j--;
+					}
+						 
+				}
+			    else 
+						i++;
+		   }
+       return array;
+    }
+}
