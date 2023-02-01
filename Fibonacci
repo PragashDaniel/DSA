@@ -19,26 +19,19 @@ class fibonacci
 class Program {
   public static int getNthFib(int n) 
 	{
-    // Write your code here.
 		if(n==1)
-		{
-			 return 0;
-		}
+			return 0;
 		else if(n==2)
-		{
-			 return 1;
-		}
+			return 1;
 		int first=0,fib=0,second=1;
-		for(int i=1;i<n;i++)
+		for(int i=3;i<=n;i++)
 		{
-			  if(i==n-1)
-				{
-					 return fib;
-				}
-				fib=first+second;
+              		  fib=first+second;
 			  first=second;
 			  second=fib;
+			  if(i==n)
+				return fib;
+			  
 		}
     return 1;
   }
-}
