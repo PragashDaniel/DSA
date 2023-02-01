@@ -29,7 +29,7 @@ public class Interview
     {
         while(true){
         System.out.println("1) Enter new Candidate press 1 or 0 to stop");
-        System.out.println("2) No. of. Sheets available press 2");
+        System.out.println("2) No. of. Seats available press 2");
         System.out.println("3) Press 3 if Interview gets finished");
         int n=sc.nextInt();
         if(n==3)
