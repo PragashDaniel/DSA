@@ -16,16 +16,16 @@ import java.util.Scanner;
 public class Interview 
 {
     Scanner sc=new Scanner(System.in);
-    final int LIMIT=5;int candidate=0,waitList=0;
-    Queue<Integer> queue=new LinkedList<>();
-    Queue<Integer> queueWaitList=new LinkedList<>();
+    private final int LIMIT=5,int candidate=0,waitList=0;
+    private Queue<Integer> queue=new LinkedList<>();
+    private Queue<Integer> queueWaitList=new LinkedList<>();
     public static void main(String[] args) 
     {
         
-        Interview Interview=new Interview();
-        Interview.page1();
+        Interview interview=new Interview();
+        interview.page1();
     }
-    void page1()
+    private void page1()
     {
         while(true){
         System.out.println("1) Enter new Candidate press 1 or 0 to stop");
@@ -46,7 +46,7 @@ public class Interview
             else
                 break;}
     }
-    void allow()
+    private void allow()
     {
         if(candidate<5)
         {
@@ -59,7 +59,7 @@ public class Interview
             queueWaitList.add(waitList++);
         }
     }
-    void finished()
+    private void finished()
     {
         queue.remove();
         if(!queueWaitList.isEmpty()){
