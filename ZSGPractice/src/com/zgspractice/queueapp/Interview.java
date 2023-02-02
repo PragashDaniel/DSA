@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Interview 
 {
     Scanner sc=new Scanner(System.in);
-    private final int LIMIT=5,int candidate=0,waitList=0;
+    private final int LIMIT=5;private int candidate=0,waitList=0;
     private Queue<Integer> queue=new LinkedList<>();
     private Queue<Integer> queueWaitList=new LinkedList<>();
     public static void main(String[] args) 
