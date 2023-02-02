@@ -36,7 +36,7 @@ public class SportsUsingStack
         int n=sc.nextInt();
         page2(stack,n);
     }
-    void page2(Stack<ArrayList<String>>stack,int n)
+    privat void page2(Stack<ArrayList<String>>stack,int n)
     {
         if(n==1)
         {
@@ -61,7 +61,7 @@ public class SportsUsingStack
         else
             return;
     }
-    void display(Stack<ArrayList<String>> stack)
+    private void display(Stack<ArrayList<String>> stack)
     {
         for(int i=0;i<stack.peek().size();i++)
             System.out.println(stack.peek().get(i));
