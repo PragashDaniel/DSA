@@ -1,2 +1,0 @@
-DoublyLinkedList.Node
-DoublyLinkedList.DoublyLinkedList
